@@ -1,0 +1,58 @@
+  void login() {
+    var url =
+        "https://online.ndbs.lk/atsweb/login?action=login&format=json&txtUserName=iotdineth&txtPassword=Password@12&product=Mobile";
+    var uri = Uri.https('online.ndbs.lk', 'atsweb/login');
+    print(uri);
+
+    // final dio = Dio();
+
+    // var response = await dio.get(
+    //     "https://online.ndbs.lk/atsweb/login?action=login&format=json&txtUserName=iotdineth&txtPassword=Password@12&product=Mobile");
+
+    // print(response.data);
+
+    // var client = BrowserClient();
+
+    // try {
+    // HttpClientRequest request = await client.get(
+    //     "https://online.ndbs.lk/atsweb/login?action=login&format=json&txtUserName=iotdineth&txtPassword=Password@12&product=Mobile",
+    //     443,
+    //     "");
+
+    //   var response = await client.post(uri, body: {
+    //     "action": "login",
+    //     "format": "json",
+    //     "txtUserName": "iotdineth",
+    //     "txtPassword": "Password@12",
+    //     "product": "Mobile"
+    //   });
+
+    //   var responseH = await response.headers;
+    //   var responseB = await response.body;
+    // } catch (e) {
+    //   print(e);
+    // }
+    // http.post(uri, body:
+    // {
+    //   "action": "login",
+    //   "format": "json",
+    //   "txtUserName": "iotdineth",
+    //   "txtPassword": "Password@12",
+    //   "product": "Mobile"
+    // }, headers: {
+    //   "cookie": "JSESSIONID=wv4sd5aoj2_6UX_37UR3bzyJUzx5sWyxpg56flQc.ndbsec-oms"
+    // }).then((value) {
+    //   // var requestHeaders = value
+    //   var reponseHeaders = value.body;
+    //   print(reponseHeaders);
+    // });
+    // Requests.post(url).then((value) => print(value.));
+    final uno = Uno();
+
+// Make a request for a user with a given ID
+    uno.get(url).then((response) {
+      print(response.data); // it's a Map<String, dynamic>.
+    }).catchError((error) {
+      print(error); // It's a UnoError.
+    });
+  }
